@@ -14,13 +14,6 @@ mvnw -ntp -Pprod -DskipTests verify jib:dockerBuild in D:\code-jhipster\for-k8s\
 mvnw -ntp -Pprod -DskipTests verify jib:dockerBuild in D:\code-jhipster\for-k8s\store
 ```
 
-Alternatively, use Jib to build and push image directly to a remote registry:
-```
-./mvnw -ntp -Pprod -DskipTests verify jib:build -Djib.to.image=ustcck/gateway in D:\code-jhipster\for-k8s\gateway
-./mvnw -ntp -Pprod -DskipTests verify jib:build -Djib.to.image=ustcck/blog in D:\code-jhipster\for-k8s\blog
-./mvnw -ntp -Pprod -DskipTests verify jib:build -Djib.to.image=ustcck/store in D:\code-jhipster\for-k8s\store
-```
-
 You will need to push your image to a registry. If you have not done so, use the following commands to tag and push the images:
 
 ```
@@ -30,6 +23,13 @@ $ docker image tag blog ustcck/blog
 $ docker push ustcck/blog
 $ docker image tag store ustcck/store
 $ docker push ustcck/store
+```
+
+Alternatively, use Jib to build and push image directly to a remote registry:
+```
+mvnw -Pprod -DskipTests jib:build -Djib.to.image=ustcck/gateway:2.0.0 in D:\code-jhipster\for-k8s\gateway
+mvnw -Pprod -DskipTests jib:build -Djib.to.image=ustcck/blog:2.0.0 in D:\code-jhipster\for-k8s\blog
+mvnw -Pprod -DskipTests jib:build -Djib.to.image=ustcck/store:2.0.0 in D:\code-jhipster\for-k8s\store
 ```
 
 ## Deployment
