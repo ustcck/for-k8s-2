@@ -27,9 +27,9 @@ $ docker push ustcck/store
 
 Alternatively, use Jib to build and push image directly to a remote registry:
 ```
-mvnw -Pprod -DskipTests jib:build -Djib.to.image=ustcck/gateway:2.0.0 in D:\code-jhipster\for-k8s\gateway
-mvnw -Pprod -DskipTests jib:build -Djib.to.image=ustcck/blog:2.0.0 in D:\code-jhipster\for-k8s\blog
-mvnw -Pprod -DskipTests jib:build -Djib.to.image=ustcck/store:2.0.0 in D:\code-jhipster\for-k8s\store
+mvnw package -Pprod -DskipTests jib:build -Djib.to.image=ustcck/gateway:2.0.0 in D:\code-jhipster\for-k8s\gateway
+mvnw package -Pprod -DskipTests jib:build -Djib.to.image=ustcck/blog:2.0.0 in D:\code-jhipster\for-k8s\blog
+mvnw package -Pprod -DskipTests jib:build -Djib.to.image=ustcck/store:2.0.0 in D:\code-jhipster\for-k8s\store
 ```
 
 ## Deployment
